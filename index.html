@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet"href="resources/css/app.css">
-    <title>Document</title>
+    <title>Chelsea Wu</title>
 </head>
 <body>
     <!-- <p class="text-center bold">This is header! </p> -->
 
-        <div class="container-fluid bg-dark ">
+        <!-- <div class="container-fluid bg-dark ">
             <div class="container bg-dark">
                 <div class="row">
                     <div class="col-1 ">
@@ -32,13 +32,34 @@
      
             </div>
    
-        </div>
+        </div> -->
 
     <header>
     <section>
-        
 
-        <!-- Fixed navbar -->
+        <!-- header of webpage -->
+        <div class="container bg-dark md bg-info">
+            <div id="layout-header">
+                <div id="layout-header-title"><img src="resources/img/waterdrop.png" width="19" height="31" alt=""/> INSIGHT</div>
+                  <div id="layout-header-logo">
+                    <a href="https://dnr.nebraska.gov">
+                      <img src="resources/img/NDRLogoWWEB.png" width="100%" height="150%"  alt=""/>
+                    </a>
+                  </div>
+                <div id="layout-header-subtitle">An Integrated Network of Scientific Information & GeoHydrologic Tools</div>
+                <div id="layout-header-navigation">
+                    <div class="layout-header-navigation-button"><a href="index.html">HOME</a></div>
+                  <div class="layout-header-navigation-button"><a href="about.html">ABOUT</a></div>
+                  <div class="layout-header-navigation-button" style="width:175px"><a href="modeling.html">MODELING DATA</a></div>
+                  <!-- <div class="layout-header-navigation-button"><a href="#" onclick="window.open('https://nednr.nebraska.gov/RealTime/', '_blank', 'fullscreen=no'); return false;">STREAM GAGING</a></div> -->
+                  <div class="layout-header-navigation-button" style="width:175px"><a href="https://nednr.nebraska.gov/RealTime/" target="_blank">STREAM GAGING</a></div>
+                  <div class="layout-header-navigation-button" style="width:175px"><a href ="https://dnr.nebraska.gov/data/groundwater-data" target ="_blank">GROUND WATER</a></div>
+                </div>
+                </div>
+        </div>
+  
+
+        <!-- navbar -->
         <div class="container-fluid bg-dark">
             <div class="container bg-dark">
                 <div class="row ">
@@ -77,20 +98,7 @@
 
 
     </header>
-<!-- 
-    <div id="layout-header">
-        <div id="layout-header-title"><img src="resources/img/waterdrop.png" width="19" height="31" alt=""/> INSIGHT</div>
-        <div id="layout-header-logo"><a href="https://dnr.nebraska.gov"><img src="resources/img/NDRLogoWWEB.png" width="100%" height="150%"  alt=""/></a></div>
-        <div id="layout-header-subtitle">An Integrated Network of Scientific Information & GeoHydrologic Tools</div>
-        <div id="layout-header-navigation">
-            <div class="layout-header-navigation-button"><a href="index.html">HOME</a></div>
-            <div class="layout-header-navigation-button"><a href="about.html">ABOUT</a></div>
-            <div class="layout-header-navigation-button" style="width:175px"><a href="modeling.html">MODELING DATA</a></div>
-            <div class="layout-header-navigation-button"><a href="#" onclick="window.open('https://nednr.nebraska.gov/RealTime/', '_blank', 'fullscreen=no'); return false;">STREAM GAGING</a></div> -->
-            <!-- <div class="layout-header-navigation-button" style="width:175px"><a href="https://nednr.nebraska.gov/RealTime/" target="_blank">STREAM GAGING</a></div>
-            <div class="layout-header-navigation-button" style="width:175px"><a href ="https://dnr.nebraska.gov/data/groundwater-data" target ="_blank">GROUND WATER</a></div>
-        </div>
-    </div> -->
+
 
     <!-- Begin page content -->
     <main class="flex-shrink-0">
@@ -137,26 +145,39 @@
             </div>
 
           </div>
-<!-- 
-        <div class="card">
-            <img src="/resources/img/INSIGHT_AD.PNG" alt="" >
-            <p class="text-center text-dark">Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Voluptas soluta voluptatibus distinctio dolorem numquam, 
-                asperiores ut voluptates, quidem commodi aspernatur eligendi magni tenetur quos? Corporis, 
-                fugiat odit? Eos quasi nihil ut, hic ex non quisquam deserunt illo dolorum iusto laborum.</p>
-        </div> -->
+
 
     </main>
         
-
-    <footer class="footer mt-auto py-3 bg-dark text-white">
+<!-- footer -->
+    <!-- <footer class="footer mt-auto py-3 bg-dark text-white">
         <div class="container">
             <span class="text-muted">Place sticky footer content here.</span>
             <h1 class="bold">Footer information goes here!</h1>
             <div class="display-2">Footer information goes here!</div>
         </div>
-    </footer>
+    </footer> -->
+    <div class="container mt-auto bg-info bg-dark text-dark">
 
+        <div id="layout-footer-content">
+            <div id="layout-footer-content-left">
+                <div><a href="index.html">Home</a> |<a href="about.html"> About</a> |<a href="modeling.html"> Modeling Data</a></div>
+                <div><a href="">Security, Privacy & Accessibility Policy</a></div>
+                <div><a href="">Nebraska DNR Web Site</a></div>
+                <br>
+                <div><font size="2">©</font> 2018, Nebraska Department of Natural Resources. All Rights Reserved.</div>
+            </div>
+            <div id="layout-footer-content-right">
+                <div>The Nebraska Department of Natural Resources</div>
+                <div>301 Centennial Mall South</div>
+                <div>Lincoln, Nebraska 68509-4676</div>
+                <div>Phone 402-471-2363 | Fax 402-471-2900</div>
+                <br>
+                <img align="left" width="300" alt="State of Nebraska Logo" src="resources/img/nebraskaLogo.PNG" border="0" />
+            </div>
+    </div>
+
+    <!-- load scrit for bootstrap at the end of body section-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
