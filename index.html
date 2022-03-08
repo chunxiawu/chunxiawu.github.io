@@ -5,180 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet"href="resources/css/app.css">
-    <title>Chelsea Wu</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Chelsea's Webpage</title>
+
+
+
 </head>
 <body>
-    <!-- <p class="text-center bold">This is header! </p> -->
 
-        <!-- <div class="container-fluid bg-dark ">
-            <div class="container bg-dark">
-                <div class="row">
-                    <div class="col-1 ">
-                        <img src="resources/img/waterdrop.png" width="19" height="31" alt=""/>
-                        <div class="p lead bold">INSIGHT</div>
-                    </div>
-                    <div class="col-6 fluid">
-                        <div id="layout-header-subtitle">An Integrated Network of Scientific Information & GeoHydrologic Tools</div>
-                    </div>
-                    <div class="col-md-5 text-center d-none d-md-block">
-                        <div id="layout-header-logo">
-                            <a href="https://dnr.nebraska.gov">
-                                <img class="img-fluid" src="resources/img/NDRLogoWWEB.png" width="100%" height="150%"  alt=""/>
-                            </a>
-                        </div>    
-                    </div>
-                </div>               
-     
-            </div>
-   
-        </div> -->
-
-    <header>
-    <section>
-
-        <!-- header of webpage -->
-        <div class="container bg-dark md bg-info">
-            <div id="layout-header">
-                <div id="layout-header-title"><img src="resources/img/waterdrop.png" width="19" height="31" alt=""/> INSIGHT</div>
-                  <div id="layout-header-logo">
-                    <a href="https://dnr.nebraska.gov">
-                      <img src="resources/img/NDRLogoWWEB.png" width="100%" height="150%"  alt=""/>
-                    </a>
-                  </div>
-                <div id="layout-header-subtitle">An Integrated Network of Scientific Information & GeoHydrologic Tools</div>
-                <div id="layout-header-navigation">
-                    <div class="layout-header-navigation-button"><a href="index.html">HOME</a></div>
-                  <div class="layout-header-navigation-button"><a href="about.html">ABOUT</a></div>
-                  <div class="layout-header-navigation-button" style="width:175px"><a href="modeling.html">MODELING DATA</a></div>
-                  <!-- <div class="layout-header-navigation-button"><a href="#" onclick="window.open('https://nednr.nebraska.gov/RealTime/', '_blank', 'fullscreen=no'); return false;">STREAM GAGING</a></div> -->
-                  <div class="layout-header-navigation-button" style="width:175px"><a href="https://nednr.nebraska.gov/RealTime/" target="_blank">STREAM GAGING</a></div>
-                  <div class="layout-header-navigation-button" style="width:175px"><a href ="https://dnr.nebraska.gov/data/groundwater-data" target ="_blank">GROUND WATER</a></div>
+    <!-- Insight logo  -->
+    <div class="container-fluid bg-dark">
+        <div class="container bg-dark md">
+            <div class="row md py-2">
+                <div class="col-5 me-auto px-4">
+                    <img src="resources/img/waterdrop.png" width="19" height="31" alt=""/> 
+                    <div class="text-start text-uppercase fw-bold">insight</div>
+                    
                 </div>
+                <div class="md col-2 d-none d-md-block d-md-col-2 ms-auto my-2">
+                    <div id="layout-header-logo">
+                        <a href="https://dnr.nebraska.gov">          
+                          <img class="img-fluid" src="resources/img/NDRLogoWWEB.png" alt=""/>
+                        </a>
+                      </div>
                 </div>
-        </div>
-  
-
-        <!-- navbar -->
-        <div class="container-fluid bg-dark">
-            <div class="container bg-dark">
-                <div class="row ">
-                    <div class="col-6">
-                        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-                            <div class="container">
-                              <div class="collapse navbar-collapse" id="navbarCollapse">
-                                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                                  <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="about.html">About</a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="modeling.html">Modeling</a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="waterplanning.html">WaterPlaning</a>
-                                  </li>
-                                </ul>
-                                <!-- <form class="d-flex">
-                                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                  <button class="btn btn-outline-success" type="submit">Search</button>
-                                </form> -->
-                              </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-    
-    
-            </div>
-        </div>
-    </section>
-
-
-    </header>
-
-
-    <!-- Begin page content -->
-    <main class="flex-shrink-0">
-        <div class="container">
-        <h1 class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Iste provident ullam doloribus nisi ipsum asperiores saepe aliquam perferendis quia. Veritatis, qui facere consectetur sint quidem nesciunt blanditiis natus? Magni, iste.
-            Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
-        <p>Back to <a href="/docs/5.0/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
-        </div>
-
-        <div class="container">
-            <h1 class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-            <p class="display-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                Reiciendis odit dignissimos quaerat ad ducimus obcaecati recusandae quis tenetur 
-                ut suscipit optio deleniti, exercitationem enim nobis, repudiandae nisi commodi 
-                autem sint aspernatur ratione sit consequatur itaque tempore! Ad minima consequatur quo 
-                ipsam voluptates fuga distinctio itaque commodi, libero illum repellat? Debitis?
-    
-                <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
-            <!-- <p>Back to <a href="/docs/5.0/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p> -->
-        </div>
-
-        <div class="container card text-center ">
-            <div class="card-header">
-              <ul class="nav nav-pills card-header-pills">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Title</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quod.
-
-              </p>
-              <a href="#" class="btn btn-primary">Go Top</a>
             </div>
 
-          </div>
-
-
-    </main>
-        
-<!-- footer -->
-    <!-- <footer class="footer mt-auto py-3 bg-dark text-white">
-        <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-            <h1 class="bold">Footer information goes here!</h1>
-            <div class="display-2">Footer information goes here!</div>
         </div>
-    </footer> -->
-    <div class="container mt-auto bg-info bg-dark text-dark">
-
-        <div id="layout-footer-content">
-            <div id="layout-footer-content-left">
-                <div><a href="index.html">Home</a> |<a href="about.html"> About</a> |<a href="modeling.html"> Modeling Data</a></div>
-                <div><a href="">Security, Privacy & Accessibility Policy</a></div>
-                <div><a href="">Nebraska DNR Web Site</a></div>
-                <br>
-                <div><font size="2">©</font> 2018, Nebraska Department of Natural Resources. All Rights Reserved.</div>
-            </div>
-            <div id="layout-footer-content-right">
-                <div>The Nebraska Department of Natural Resources</div>
-                <div>301 Centennial Mall South</div>
-                <div>Lincoln, Nebraska 68509-4676</div>
-                <div>Phone 402-471-2363 | Fax 402-471-2900</div>
-                <br>
-                <img align="left" width="300" alt="State of Nebraska Logo" src="resources/img/nebraskaLogo.PNG" border="0" />
-            </div>
     </div>
 
-    <!-- load scrit for bootstrap at the end of body section-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+        <div class="container">
+            <!-- <a href="#" class="navbar-brand">Insight</a> -->
+            <button class="navbar-toggler" type="button"
+            data-bs-toggle ="collapse" data-bs-target ="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu"> 
+                <ul class="navbar-nav ms-end fs-3">
+                    
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item">
+                        <a href="modeling.html" class="nav-link">Modeling</a></li>
+                    <li class="nav-item">
+                        <a href="waterplanning" class="nav-link">WaterPlanning</a></li>
+
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 </html>
