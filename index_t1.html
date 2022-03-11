@@ -7,6 +7,70 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="resources/css/app.css">
     <title>Chelsea Wu</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.39/esri/css/esri.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="resources/css/app.css"> -->
+
+  <script>var dojoConfig = { mblAlwaysHideAddressBar: true };</script>
+  <script src="https://js.arcgis.com/3.39compact/"></script>
+    <script>
+        dojo.require("esri.map");
+        dojo.require("esri.layers.FeatureLayer");
+        dojo.require("esri.tasks.query");
+
+        var map;
+
+        function init() {
+          //onorientationchange doesn't always fire in a timely manner in Android so check for both orientationchange and resize
+          var supportsOrientationChange = "onorientationchange" in window, orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+          window.addEventListener(orientationEvent, function() {
+            orientationChanged();
+          }, false);
+
+          map = new esri.Map("map2", {
+            basemap: "streets-vector",
+            center: [-104.808, 39.719],
+            zoom: 8
+          });
+
+          dojo.connect(map, "onLoad", function(evt) {
+            //add a feature layer
+            var content = "<b>Name</b>: ${NAME} <br /><b>Population</b>: ${POP2007}";
+
+            var infoTemplate = new esri.InfoTemplate("County Details", content);
+            map.infoWindow.resize(225, 75);
+            var featureLayer = new esri.layers.FeatureLayer("https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/3", {
+              mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
+              outFields : ["NAME", "POP2007"],
+              infoTemplate : infoTemplate
+            });
+            var rend = new esri.renderer.SimpleRenderer(new esri.symbol.SimpleFillSymbol().setColor(new dojo.Color([254, 216, 93, 0.6])));
+            featureLayer.setRenderer(rend);
+
+            featureLayer.setSelectionSymbol(new esri.symbol.SimpleFillSymbol().setColor(new dojo.Color([0, 255, 255, 0.6])));
+
+            dojo.connect(featureLayer, 'onClick', function(evt) {
+              //select the clicked feature
+              var query = new esri.tasks.Query();
+              query.geometry = evt.mapPoint;
+              featureLayer.selectFeatures(query, esri.layers.FeatureLayer.SELECTION_NEW);
+            });
+
+            map.addLayer(featureLayer);
+          });
+        }
+
+        function orientationChanged() {
+          console.log("Orientation changed: " + window.orientation);
+          if(map) {
+            map.reposition();
+            map.resize();
+          }
+        }
+
+        dojo.ready(init);
+  </script>
 </head>
 <body>
     <!-- <p class="text-center bold">This is header! </p> -->
@@ -111,14 +175,15 @@
         </div>
 
         <div class="container">
-            <h1 class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+          <div id="map2"></div>
+            <!-- <h1 class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
             <p class="display-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                 Reiciendis odit dignissimos quaerat ad ducimus obcaecati recusandae quis tenetur 
                 ut suscipit optio deleniti, exercitationem enim nobis, repudiandae nisi commodi 
                 autem sint aspernatur ratione sit consequatur itaque tempore! Ad minima consequatur quo 
                 ipsam voluptates fuga distinctio itaque commodi, libero illum repellat? Debitis?
     
-                <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
+                <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p> -->
             <!-- <p>Back to <a href="/docs/5.0/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p> -->
         </div>
 

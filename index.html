@@ -12,68 +12,11 @@
 
 <link rel="stylesheet" href="https://js.arcgis.com/3.39/esri/css/esri.css">
 <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
-<link rel="stylesheet" type="text/css" href="resources/css/app.css">
+<!-- <link rel="stylesheet" type="text/css" href="resources/css/app.css"> -->
 
 <script>var dojoConfig = { mblAlwaysHideAddressBar: true };</script>
 <script src="https://js.arcgis.com/3.39compact/"></script>
-<!-- <script>
-  dojo.require("esri.map");
-  dojo.require("esri.layers.FeatureLayer");
-  dojo.require("esri.tasks.query");
 
-  var map;
-
-  function init() {
-    //onorientationchange doesn't always fire in a timely manner in Android so check for both orientationchange and resize
-    var supportsOrientationChange = "onorientationchange" in window, orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
-
-    window.addEventListener(orientationEvent, function() {
-      orientationChanged();
-    }, false);
-
-    map = new esri.Map("map2", {
-      basemap: "streets-vector",
-      center: [-104.808, 39.719],
-      zoom: 8
-    });
-
-    dojo.connect(map, "onLoad", function(evt) {
-      //add a feature layer
-      var content = "<b>Name</b>: ${NAME} <br /><b>Population</b>: ${POP2007}";
-
-      var infoTemplate = new esri.InfoTemplate("County Details", content);
-      map.infoWindow.resize(225, 75);
-      var featureLayer = new esri.layers.FeatureLayer("https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/3", {
-        mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
-        outFields : ["NAME", "POP2007"],
-        infoTemplate : infoTemplate
-      });
-      var rend = new esri.renderer.SimpleRenderer(new esri.symbol.SimpleFillSymbol().setColor(new dojo.Color([254, 216, 93, 0.6])));
-      featureLayer.setRenderer(rend);
-
-      featureLayer.setSelectionSymbol(new esri.symbol.SimpleFillSymbol().setColor(new dojo.Color([0, 255, 255, 0.6])));
-
-      dojo.connect(featureLayer, 'onClick', function(evt) {
-        //select the clicked feature
-        var query = new esri.tasks.Query();
-        query.geometry = evt.mapPoint;
-        featureLayer.selectFeatures(query, esri.layers.FeatureLayer.SELECTION_NEW);
-      });
-
-      map.addLayer(featureLayer);
-    });
-  }
-
-  function orientationChanged() {
-    console.log("Orientation changed: " + window.orientation);
-    if(map) {
-      map.reposition();
-      map.resize();
-    }
-  }
-
-  dojo.ready(init);
-</script> -->
 <script>
   require([
     "esri/map",    
@@ -677,7 +620,7 @@
     
   </div>
     </div>
-    <div id="layout-footer-area" style="position:relative; bottom:0px; width: 100%;"></div>
+    <!-- <div id="layout-footer-area" style="position:relative; bottom:0px; width: 100%;"></div> -->
 
   </div>
 </body>
