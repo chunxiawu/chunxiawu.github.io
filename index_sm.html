@@ -11,39 +11,58 @@
 <title>Getting Started - Mobile</title>
 
 <link rel="stylesheet" href="https://js.arcgis.com/3.39/esri/css/esri.css">
-<link rel="stylesheet" href="css/app.css">
-<link rel="stylesheet" href="css/main.css">
-
-
+<!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+<link rel="stylesheet" type="text/css" href="css/app.css">
 
 <script>var dojoConfig = { mblAlwaysHideAddressBar: true };</script>
 <script src="https://js.arcgis.com/3.39compact/"></script>
 <script>
   require([
-    "esri/map",
+    "esri/map",    
     "dojox/mobile",
     "dojox/mobile/parser",
     "esri/sniff",
+    "esri/layers/FeatureLayer",
     "dojox/mobile/deviceTheme",
     "dojo/dom",
     "dijit/registry",
     "dojo/on",
     "dojox/mobile/ToolBarButton",
     "dojox/mobile/View",
-    "dojox/mobile/ContentPane"
+    "dojox/mobile/ContentPane",
+    "dojo/domReady!"
   ],
 
-    function (Map, mobile, parser, has, dTheme, dom, registry, on) {
+    function (Map, mobile, parser, FeatureLayer, has, dTheme, dom, registry, on) {
       parser.parse();
       mobile.hideAddressBar();
 
       var map = new esri.Map("map", {
         basemap: "topo-vector",
-        center: [-118.696, 34.111],
+        center: [	-96.681679, 40.806862],
         zoom: 7,
         slider: true
       });
+
+    /****************************************************************
+     * Add feature layer - A FeatureLayer at minimum should point
+     * to a URL to a feature service or point to a feature collection 
+     * object.
+     ***************************************************************/
+
+      var gisServer = "https://gis.ne.gov/Agency/rest/services/INSIGHT_DNR_NE/MapServer/";
+
+      var labelsLayerUrl = gisServer + "0";
+      var basinLineLayerUrl = gisServer + "1";
+      var basinLayerUrl = gisServer + "2";
+      var subbasinLayerUrl = gisServer + "3";
+
+      var featureLayer = new FeatureLayer(basinLineLayerUrl);
+
+      
+
       map.on("load", mapLoadHandler);
+      map.addLayer(featureLayer);
 
       var resizeEvt = (window.onorientationchange !== undefined && !has('android')) ? "orientationchange" : "resize";
       on(window, resizeEvt, resizeMap);
