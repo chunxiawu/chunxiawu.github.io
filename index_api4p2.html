@@ -1,0 +1,127 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS Developer Guide: Data layers (Feature layers)</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+<link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.22/"></script>
+
+  <script>
+    require([
+    //   "esri/config",
+    // "esri/WebMap",
+    "esri/geometry/Extent",
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer"
+    //   "esri/layers/ArcGISTiledMapServiceLayer"
+    ],(Extent,Map, MapView, FeatureLayer)=> {
+
+        var IWMBasemapLayerUrl = "https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer";
+        var satelliteLayerUrl = "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer";
+
+    // //   esriConfig.apiKey = "YOUR_API_KEY";
+    //   const map = new Map({
+    //     basemap: "arcgis-topographic" //Basemap service
+    //   });
+
+    // const map = new WebMap({
+    //     portalItem:{
+    //         // id:"de26a3cf4cc9451298ea173c4b324736"
+    //         id:"274684d7a9d74ca4b87f529776feb3a2"
+    //     }
+
+    // });
+
+
+    var wkIdNumber = 102100; 
+    var initExtent = new Extent({
+            xmin: -12472810.909933532, 
+            ymin: 4621263.6726877075, 
+            xmax: -9620792.510557795, 
+            ymax: 5540953.997014703,
+            zoom:6,
+
+            "spatialReference": { "wkid": wkIdNumber }
+        });
+
+        map = new Map("map",{
+            basemap: "dark-gray"
+
+        });
+
+        // map = new Map("map", {
+        //     basemap:"dark-gray",
+        //     extent: initExtent,
+        //     fitExtent: false, //true
+        //     logo: false,
+        //     maxZoom: 10,
+        //     minZoom: 6,
+        //     showAttribution: false,
+        //     smartNavigation: false,
+        //     zoom: 6
+        // });
+
+        // IWMBasemapLayer = new Tiled(IWMBasemapLayerUrl, { showAttribution: false });
+        // map.addLayer(IWMBasemapLayer);
+
+
+
+      // URLs for cat Test
+        var gisServer = "https://giscat.ne.gov/Agency/rest/services/INSIGHT_DNR_NE/MapServer/";
+
+        var labelsLayerUrl = gisServer + "0";
+        var basinLineLayerUrl = gisServer + "1";
+        var basinLayerUrl = gisServer + "2";
+        var subbasinLayerUrl = gisServer + "3";
+
+
+
+        var jsonBasin = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/basin/";
+        var jsonSubbasin = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/subbasin/";
+
+        var jsonBasinOverview = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/basin_overview/";
+        var jsonSubbasinOverview = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/subbasin_overview/";
+
+      const basinLayer = new FeatureLayer({
+        url: basinLayerUrl
+      });
+      map.add(basinLayer);
+
+      const subbasinLayer = new FeatureLayer({
+        // url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails_styled/FeatureServer/0"
+        url:subbasinLayerUrl
+    });
+      map.add(subbasinLayer,0);
+
+    //   const parksLayer = new FeatureLayer({
+    //     url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space_styled/FeatureServer/0"
+    //   });
+    //   map.add(parksLayer,0);
+    const view = new MapView({
+        container: "viewDiv",
+        map: map,
+        extent:initExtent
+        // center: [-100,41.5], //Longitude, latitude
+        // zoom: 5,
+        // constraints: {
+        //   snapToZoom: false
+        
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>

@@ -40,11 +40,13 @@
 
             var infoTemplate = new esri.InfoTemplate("County Details", content);
             map.infoWindow.resize(225, 75);
+
             var featureLayer = new esri.layers.FeatureLayer("https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/3", {
               mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
               outFields : ["NAME", "POP2007"],
               infoTemplate : infoTemplate
             });
+            
             var rend = new esri.renderer.SimpleRenderer(new esri.symbol.SimpleFillSymbol().setColor(new dojo.Color([254, 216, 93, 0.6])));
             featureLayer.setRenderer(rend);
 
