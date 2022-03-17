@@ -1,0 +1,107 @@
+.terminologylayer {
+  align-items: center;
+  background-image:  url('resources/img/SouthBranchMiddleLoup.jpg');
+  /* background-image:  url('resources/img/Sherman.jpg'); */
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  height:180%;
+/* 
+  position: relative;
+  background-repeat: no-repeat;
+  width: 100%; */
+}
+.terminologylayer::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width:100%;
+  background-color: rgba(110, 110, 110,  0.105);
+}
+.terminologyTable{
+  position: relative;
+
+}
+.layout-main-header{
+  position: relative;
+}
+
+#layout-main-content{
+  display:table;
+}
+#layout-main-terminology{
+  display: table;
+}
+
+#layout-footer-area{
+  margin-top: 50px;
+}
+
+th {
+  background-color: none;
+  border-right: solid 1px black; 
+  border-left: solid 1px black;
+  font-size: 12pt;
+  padding: 4px;
+  font-weight: 600;
+  vertical-align: top;
+}
+tr {
+  font-size: 12pt;
+  border: 1px solid black;
+  border-right: solid 1px black; 
+  border-left: solid 1px black;
+  background-color: none;
+  font-weight: 600;
+  color: rgb(2, 5, 7);
+  padding: 4px;
+  margin: 0px;
+  vertical-align: top;
+}
+td:first-child {
+  font-size: 12pt;
+  border-right: solid 1px black; 
+  border-left: solid 1px black;
+  background-color: none;
+  font-weight: 600;
+  padding: 5px;
+  margin: 0px;
+  vertical-align: top;
+}
+
+.modelinglayer {
+display: table;
+align-items: center;
+justify-content: center;
+background-image:  url('resources/img/Sherman.jpg');
+position: relative;
+background-size: cover;
+width: 100%;
+height:180%;
+}
+
+dt {
+text-align: center;
+font-family: arial, sans-serif;
+font-weight: 600;
+color: white;
+padding: 2px;
+margin:0;
+}
+
+/* html, body, .mblView {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+   */
+  /* #mapView { */
+    /*height:	100%;*/
+  /* } */
+  
+  /* #map {
+    position:relative;
+    width:	100%;
+    height:	100%;
+  } */
