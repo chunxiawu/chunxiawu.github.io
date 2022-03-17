@@ -42,10 +42,11 @@
          * esriConfig.portalUrl = "https://myHostName.esri.com/arcgis"
          *             
          ************************************************************/
-        esriConfig.portalUrl = "https://giscat.ne.gov/Agency/rest/services/INSIGHT_DNR_NE/MapServer/0";
-        // esriConfig.portalUrl = "https://gis.nebraska.gov/Agency/rest/services/INSIGHT_DNR_NE/MapServer/";
+        // esriConfig.portalUrl = "https://giscat.ne.gov/Agency/rest/services/INSIGHT_DNR_NE/MapServer/0";
+        // // esriConfig.portalUrl = "https://gis.nebraska.gov/Agency/rest/services/INSIGHT_DNR_NE/MapServer/";
 
-        // esriConfig.portalUrl = "https://giscat.ne.gov/portal/home/"
+        // esriConfig.portalUrl = "https://giscat.ne.gov/portal/home/item.html"
+        esriConfig.portalUrl ="https://giscat.ne.gov/portal/home/item.html?id=de0f1701768b4682af0897f7f05b9e62"
         // https://gis.ne.gov/portal/home/item.html?id=de0f1701768b4682af0897f7f05b9e62
         const webmap = new WebMap({
           portalItem: {
@@ -55,6 +56,11 @@
             
           }
         });
+        // const webmap = new WebMap({
+        //   portalItem: {
+        //     id: "e691172598f04ea8881cd2a4adaa45ba"
+        //   }
+        // });
 
         /************************************************************
          * Set the WebMap instance to the map property in a MapView.

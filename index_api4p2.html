@@ -19,17 +19,32 @@
   <script>
     require([
     //   "esri/config",
-    // "esri/WebMap",
-    "esri/geometry/Extent",
+    "esri/WebMap",
+     "esri/geometry/Extent",
       "esri/Map",
       "esri/views/MapView",
-      "esri/layers/FeatureLayer"
+      "esri/layers/FeatureLayer",
+      "esri/layers/TileLayer"
     //   "esri/layers/ArcGISTiledMapServiceLayer"
-    ],(Extent,Map, MapView, FeatureLayer)=> {
+    ],(WebMap,Extent,Map, MapView, FeatureLayer,TileLayer)=> {
 
-        var IWMBasemapLayerUrl = "https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer";
-        var satelliteLayerUrl = "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer";
+      const map = new WebMap({
+        basemap: {
+          portalItem: {
+            id: "f35ef07c9ed24020aadd65c8a65d3754" // modern antique vector tiles
+          }
+        }
+      });
 
+    var IWMBasemapLayerUrl = "https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer";
+    var satelliteLayerUrl = "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer";
+      // Typical usage
+    let basemapLayer = new TileLayer({
+      // URL points to a cached tiled map service hosted on ArcGIS Server
+      // url: "https://services.arcgisonline.com/arcgis/rest/services/World_Terrain_Base/MapServer"
+      url: IWMBasemapLayerUrl
+    });
+    map.add(basemapLayer,0);
     // //   esriConfig.apiKey = "YOUR_API_KEY";
     //   const map = new Map({
     //     basemap: "arcgis-topographic" //Basemap service
@@ -60,11 +75,17 @@
             "spatialReference": { "wkid": wkIdNumber }
         });
 
-        map = new Map("map",{
-            basemap: "dark-gray"
+        // map = new Map("map",{
+        //     basemap: "dark-gray"
 
-        });
+        // });
 
+        // var map = new Map("map", {
+        //   basemap: "topo-vector",
+        //   center: [	-100, 45],
+        //   zoom: 5,
+        //   slider: true
+        // });
         // map = new Map("map", {
         //     basemap:"dark-gray",
         //     extent: initExtent,
@@ -80,40 +101,40 @@
         // IWMBasemapLayer = new Tiled(IWMBasemapLayerUrl, { showAttribution: false });
         // map.addLayer(IWMBasemapLayer);
 
-
+          // const basemapLayer = new FeatureLayer({
+          //   url:IWMBasemapLayerUrl
+          // });
+          // console.log("basemapLayer is: ",basemapLayer);
+          // map.add(basemapLayer);
 
       // URLs for cat Test
-        var gisServer = "https://giscat.ne.gov/Agency/rest/services/INSIGHT_DNR_NE/MapServer/";
+      // var gisServer = "https://giscat.ne.gov/Agency/rest/services/INSIGHT_DNR_NE/MapServer/";
+      var gisServer = "https://gis.ne.gov/Agency/rest/services/INSIGHT_DNR_NE/MapServer/"
+      var labelsLayerUrl = gisServer + "0";
+      var basinLineLayerUrl = gisServer + "1";
+      var basinLayerUrl = gisServer + "2";
+      var subbasinLayerUrl = gisServer + "3";
 
-        var labelsLayerUrl = gisServer + "0";
-        var basinLineLayerUrl = gisServer + "1";
-        var basinLayerUrl = gisServer + "2";
-        var subbasinLayerUrl = gisServer + "3";
 
 
+      var jsonBasin = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/basin/";
+      var jsonSubbasin = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/subbasin/";
 
-        var jsonBasin = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/basin/";
-        var jsonSubbasin = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/subbasin/";
-
-        var jsonBasinOverview = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/basin_overview/";
-        var jsonSubbasinOverview = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/subbasin_overview/";
+      var jsonBasinOverview = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/basin_overview/";
+      var jsonSubbasinOverview = "https://nednrcat.stone.ne.gov/InsightAPI/api/Values/subbasin_overview/";
 
       const basinLayer = new FeatureLayer({
         url: basinLayerUrl
       });
-      map.add(basinLayer);
+      console.log("basinLayer is: ",basinLayer);
+      map.add(basinLayer,10);
 
       const subbasinLayer = new FeatureLayer({
-        // url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails_styled/FeatureServer/0"
         url:subbasinLayerUrl
-    });
-      map.add(subbasinLayer,0);
+      });
+      map.add(subbasinLayer,5);
 
-    //   const parksLayer = new FeatureLayer({
-    //     url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space_styled/FeatureServer/0"
-    //   });
-    //   map.add(parksLayer,0);
-    const view = new MapView({
+      const view = new MapView({
         container: "viewDiv",
         map: map,
         extent:initExtent
