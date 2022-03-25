@@ -41,6 +41,8 @@ function random_str(
     <div id='welcome'>
     <h2>Welcome!</h2>
         <?php
+        echo "<p hidden id='colorChoice'>$greetingColor</p>";
+        
         echo "<h3 id='datetime'>It's ".date("l, F jS").".<br>\r\n";
         echo "The time is ".date("g:ia").".</h3>\r\n";
         ?>
@@ -68,7 +70,11 @@ function random_str(
             echo '<h4> Your '.$pswDigits. ' digits random password using random_str: '.$mypsw2.' </h4>';
         ?>
         </div>
-
+    <script>
+        var hiddenParagraph = document.getElementById("colorChoice")
+        document.getElementById("welcome").style.color=
+        hiddenParagraph.innerHTML;
+    </script>
     <script>
     getCurrentTime();
     setInterval('getCurrentTime()', 60000)
