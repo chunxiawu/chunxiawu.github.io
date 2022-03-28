@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- test_post.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Post</title>
+  </head>
+  <body>
+    <p>Perform the following steps:<p>
+    <ol>
+      <li>Enter two integers into the form below.</li>
+      <li>Click the form's submit button.</li>
+      <li>View the resulting display (of course).</li>
+      <li>But also look carefully at the contents of the
+        <br>display page's address bar. This time, because
+        <br>we are using the POST protocol for passing<br>
+        the form data to the PHP script for processing,<br>
+        nothing but the plain URL of the processing<br>script
+        appears in the address bar.</li>
+    </ol>
+    <form method="post" action="test_post.php">
+      <p>Value 1: <input type="text" name="value1"></p>
+      <p>Value 2: <input type="text" name="value2"></p>
+      <p><input type="submit" name="submit" value="Submit"></p>
+    </form>
+  </body>
+</html>
