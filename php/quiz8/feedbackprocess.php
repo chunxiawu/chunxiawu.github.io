@@ -4,10 +4,15 @@ $uploadOk = 1;
 // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $uploadFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 echo $target_file;
-print_r($_POST["submit"]);
+
+
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
+  // print_r($_POST["submit"]);
+
+  echo ($_POST["submit"]);
+
     $checkFileSize = filesize($_FILES["fileToUpload"]["tmp_name"]);
     echo "file size is : ". $checkFileSize;
     $uploadOk = 1;
@@ -36,9 +41,8 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 
 // 
 // Allow certain file formats
-if($uploadFileType != "pdf" && $uploadFileType != "doc" && $uploadFileType != "docx"
-&& $uploadFileType != "zip" ) {
-  echo "Sorry, only pdf, doc, docx & zip files are allowed.";
+if($uploadFileType != "zip" && $uploadFileType != "rar"  ) {
+  echo "Sorry, only zip,rar are allowed.";
   $uploadOk = 0;
 }
 
@@ -54,9 +58,10 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    // echo "Hello" .$_POST["submit"]["firstName"] .$_POST["submit"]["firstName"] . "\n";
+    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.\n";
   } else {
-    echo "Sorry, there was an error uploading your file.";
+    echo " </br> Sorry, there was an error uploading your file.";
   }
 }
 ?>

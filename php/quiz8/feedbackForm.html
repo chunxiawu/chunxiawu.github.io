@@ -8,20 +8,25 @@
 </head>
 <body>
 
-    <form action="hmwsubmit.php" method="post" enctype="multipart/form-data">
-        <p>Homework submission page....</p>
+    <form action="feedbackprocess.php" method="post" enctype="multipart/form-data">
+        <p>Please send your feedback here....</p>
 
         <p><label for="firstName">First Name:</label>
         <input type="text" name="firstName" id="firstName" size="20" ></p>
         <p><label for="lastName">Last Name:</label>
             <input type="text" name="lastName" id="lastName" size="20" ></p>
 
-        <p><label for="inp02">Password:</label>
-        <input type="password" name="pw" id="inp02" size="40" ></p>
+         <p><label for="comments">Your comments:</label>
+            <input type="textarea" name="comments" id="comments"  >
+
+         </p>   
+
+        <!-- <p><label for="inp02">Password:</label>
+        <input type="password" name="pw" id="inp02" size="40" ></p> -->
 
         <!-- <p><label for="inp03">Nick Name:</label>
         <input type="text" name="nick" id="inp03" size="40" ></p> -->
-        <p>Preferred Time:<br/>
+        <p>Submit for class:<br/>
             <input type="radio" name="classLevel" value="csce864">CSCE864<br>
             <input type="radio" name="classLevel" value="csce464" checked>CSCE464</p>
         <!-- <p>Submit homework for class:<br/>
@@ -38,7 +43,7 @@
       </form>
       
       <!-- <p>default image path is /ch08/test.jpg</p> -->
-      <a href="/quiz8/test.jpg" download>Download Your File</a>
+      <a href="/quiz8/test.jpg" download>Download</a>
       
       
 </body>
