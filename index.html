@@ -61,9 +61,9 @@
       // var featureLayer = new FeatureLayer(basinLineLayerUrl);
 
       var featureLayer = new FeatureLayer("https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0");
-
+      var basinFeatureLayer = new FeatureLayer(basinLayerUrl);
       map.on("load", mapLoadHandler);
-      map.addLayer(featureLayer);
+      map.addLayer(basinFeatureLayer);
 
       var resizeEvt = (window.onorientationchange !== undefined && !has('android')) ? "orientationchange" : "resize";
       on(window, resizeEvt, resizeMap);
