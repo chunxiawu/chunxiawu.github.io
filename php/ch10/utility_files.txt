@@ -1,0 +1,54 @@
+#get_me.sql
+#Replace 'Scobey' with 'your_name'
+#---------------------------------
+SELECT customer_id as id,
+       salutation as sal,
+       customer_first_name as first,
+       customer_middle_initial as mid,
+       customer_last_name as last,
+       gender as sex,
+       email_address as email,
+       login_name as username,
+       login_password as password
+FROM   Customers
+WHERE  customer_last_name='Scobey';
+
+SELECT phone_number, address, town_city, county, country
+FROM   Customers
+WHERE  customer_last_name='Scobey';
+
+#delete_me.sql
+#Replace 'Scobey' with 'your_name'
+#---------------------------------
+DELETE FROM  Customers
+       WHERE customer_last_name='Scobey';
+
+#get_orders.sql
+#--------------
+SELECT order_id as id,
+       customer_id as cust,
+       order_status_code as status,
+       date_order_placed as date,
+       order_details as details
+FROM Orders;
+
+SELECT order_item_id as id,
+       order_item_status_code as status,
+       order_id,
+       product_id,
+       order_item_quantity as quant,
+       order_item_price as price,
+       other_order_item_details as details
+FROM Order_Items;
+
+#delete_orders.sql
+#-----------------
+DELETE FROM Orders;
+DELETE FROM Order_Items;
+
+#get_table_sizes.sql
+#Replace 'webbook2e' with 'your_database_name'
+#---------------------------------------------
+SELECT TABLE_NAME, TABLE_ROWS
+FROM   information_schema.tables
+WHERE  table_schema='webbook2e';

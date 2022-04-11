@@ -1,0 +1,242 @@
+/* estore.css for ch10/nature
+Styles specifically relevant to our e-store pages */
+
+/********************************
+A few generally useful classes  */
+.NoDecoration {
+  text-decoration: none;
+}
+
+.AlignToTop {
+  vertical-align: top;
+}
+
+.Notification {
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.ErrorMessage {
+  color: #F00;
+}
+
+/*******************
+Used by estore.php */
+.Estore {
+  clear: both;
+  padding-bottom: 20px;
+  background-color: #FFB;
+}
+
+.Estore h3 {
+  padding: 1em 0 0 2em;
+}
+
+.Estore p {
+  padding: 1em .2em .7em 2em;
+}
+
+.Estore ul {
+  margin: 0 50px;
+}
+
+.Estore ul li {
+  margin-bottom: 10px;
+}
+
+/********************
+Used by catalog.php */
+.CategoryList {
+  clear: both;
+  padding-bottom: 20px;
+  background-color: #FFB;
+}
+
+.CategoryList ul {
+  margin: 10px 50px 15px 50px;
+}
+
+.CategoryList ul li {
+  margin-top: 5px;
+}
+
+.CategoryList ol {
+  margin: 2px 0 0 35px;
+}
+
+.CategoryList ol li {
+  margin-top: 0;
+  margin-bottom: 1px;
+}
+
+/*********************
+Used by category.php */
+.ProductList {
+  clear: both;
+  padding-bottom: 20px;
+  background-color: #FFB;
+}
+
+.ProductList p {
+  margin: 20px;
+  text-align: center;
+}
+
+.ProductList table {
+  margin: 0 auto;
+  padding-bottom: 20px;
+  border: 4px solid black;
+  border-collapse: collapse;
+}
+.ProductList table th {
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.ProductList table td {
+  padding: 0 5px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.ProductList img {
+  padding: 3px;
+}
+
+/*******************************************************
+Used by catalog.php, category.php and shoppingCart.php */
+.ProductHeader,
+.ShoppingCartHeader {
+  padding: 15px 0 10px;
+  font-size: 120%;
+  text-align: center;
+}
+
+/***********************************************************
+Used by registrationForm.php, registrationFormResponse.php,
+loginForm.php, and logout.php                              */
+article.Registration,
+article.Login,
+article.Logout {
+  margin-top: 20px;
+  padding: 20px 50px;
+  background-color: #FFB;
+}
+
+/**********************
+Used by loginForm.php */
+.TableCellSpacer td {
+  padding: 5px 5px 5px 0;
+}
+
+/***************************************************************
+Used by displayOneCatetoryItems.php and shoppingCartProcess.php
+for the button links related to shopping activities            */
+input.Button,
+a.Button {
+  display: block;
+  width: 120px;
+  margin: 3px auto;
+  padding: 2px;
+  border: 2px solid black;
+  border-radius: 5%;
+  background-color: green;
+  font-size: 80%;
+  color: white;
+  text-decoration: none;
+}
+
+/*********************************************
+Used by banner.php for the login/logout links
+under the welcome message with date and time */
+a.LongerButton {
+  display: block;
+  width: 140px;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  padding: 2px;
+  border: 2px solid black;
+  border-radius: 5%;
+  background-color: green;
+  font-size: 80%;
+  color: white;
+  text-decoration: none;
+}
+
+/********************************
+Used by shoppingCartProcess.php */
+article.ShoppingCart {
+  margin-top: 0px;
+  padding: 20px 50px;
+  background-color: #FFB;
+}
+  
+.ShoppingCart table th {
+  padding: 3px;
+}
+.ShoppingCart table td {
+  padding: 0 5px;
+  text-align: center;
+}
+.ShoppingCart img {
+  padding: 2px;
+}
+
+.ShoppingCart h4 {
+  text-align: center;
+}
+
+/****************************
+Used by checkoutProcess.php */
+article.Receipt {
+  margin-top: 0px;
+  padding: 30px 30px;
+  background-color: #FFB;
+}
+
+table.Receipt {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left:auto;
+  margin-right:auto;
+  border: 2px solid green;
+}
+
+table.Receipt th {
+  background-color: green;
+  color: white;
+  border: 2px solid green;
+}
+
+table.Receipt td {
+  padding: 0 5px;
+  border: 2px solid green;
+}
+
+table.Receipt img {
+  padding: 3px;
+}
+
+table.Receipt p {
+  padding-top: 10px;
+}
+
+p.ReceiptTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/********************************************
+Used by banner.php for additional styles for
+the welcome message with date and time      */
+#welcome h5 {
+  padding-bottom: 3px;
+}
+
+#welcome a {
+  text-decoration: none;
+}
